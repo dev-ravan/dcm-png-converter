@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
-
+from fastapi.staticfiles import StaticFiles
+from config import OUTPUT_DIRECTORY
 from routers import converter, health
 
 app = FastAPI(
@@ -8,6 +9,8 @@ app = FastAPI(
     description="API for converting DICOM medical images to PNG format",
     version="1.0.0"
 )
+
+app.mount("/files", StaticFiles(directory=OUTPUT_DIRECTORY), name="files")
 
 # Include routers
 app.include_router(converter.router)
