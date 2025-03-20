@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dcmtopng_converter/provider/upload_provider.dart';
 import 'package:dcmtopng_converter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,8 @@ void main() {
   );
 }
 
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -22,8 +26,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DICOM Upload App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark(
+        
+
       ),
       home:  FileUploadScreen(),
     );

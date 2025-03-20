@@ -28,5 +28,13 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>FlutterMetalRendering</key>
+	<string>disabled</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.14</string>  <!-- or higher -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<key>com.apple.security.network.server</key>
+	<true/>
 </dict>
 </plist>
