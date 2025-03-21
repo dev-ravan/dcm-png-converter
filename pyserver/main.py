@@ -1,3 +1,4 @@
+import sys
 from fastapi import FastAPI
 import uvicorn
 from fastapi.staticfiles import StaticFiles
@@ -33,4 +34,8 @@ if __name__ == "__main__":
     from config import OUTPUT_DIRECTORY
     import os
     print(f"Images will be stored in: {os.path.abspath(OUTPUT_DIRECTORY)}")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    if __name__ == "__main__":
+        # For Windows, it's better to use host="127.0.0.1" instead of "0.0.0.0"
+        # "0.0.0.0" might require admin privileges on Windows
+        host = "127.0.0.1" if sys.platform.startswith("win") else "0.0.0.0"
+        uvicorn.run(app, host=host, port=8000)
